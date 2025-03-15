@@ -1,0 +1,17 @@
+Repo to test deployments of an site with backend and fronted.
+
+## Things to Pay attention
+- Restrict access to public contribution
+- Avoid commiting environmental variables
+- Populate gitignore
+
+## Info
+### Vercel benefits
+- Active Firewall
+- NextJS auto config, easy deployments
+- Analitycs
+- Change detection, auto deployment
+
+### Railway benefits
+- A lot of tools supported
+- Suit for backend
