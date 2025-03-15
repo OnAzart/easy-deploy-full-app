@@ -5,7 +5,7 @@ export async function GET(request: Request) {
   const toolName = searchParams.get('toolName');
 
   try {
-    const backendUrl = process.env.BACKEND_URL || 'http://localhost:8000/summarize';
+    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000/summarize';
     const response = await fetch(`${backendUrl}?tool_name=${toolName}`, {
       method: 'GET',
       headers: {
