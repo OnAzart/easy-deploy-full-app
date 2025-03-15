@@ -4,8 +4,8 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const toolName = searchParams.get('toolName');
 
-  const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000/summarize';
-  console.log("NEXT_PUBLIC_BACKEND_URL:", backendUrl); // Log the backend URL
+  const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+  console.log("NEXT_PUBLIC_BACKEND_URL:", backendUrl); // Log the backend URL (Verification)
 
   try {
     console.log("Fetching from:", `${backendUrl}?tool_name=${toolName}`); // Log the full URL
