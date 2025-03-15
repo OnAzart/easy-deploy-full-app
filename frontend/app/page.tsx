@@ -1,13 +1,14 @@
 'use client'; // This is a client component
 
 import { useState } from 'react';
+import React from 'react'; // Import React
 
 export default function Home() {
   const [toolName, setToolName] = useState('');
   const [summary, setSummary] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setLoading(true);
     setSummary('');
