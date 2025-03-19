@@ -40,16 +40,16 @@ def search_documentation(tool_name: str) -> str:
     # In a real application, you would use a search engine or
     # documentation index to find relevant documentation.
     # For now, return a placeholder.
-    return f"This is a placeholder for the documentation of {tool_name}.  Imagine detailed documentation here."
+    return f"No docs"
 
 
 def summarize_documentation(documentation: str, tool_name: str, max_tokens: int = 200) -> str:
     """
     Summarizes the given documentation using OpenAI's GPT.
     """
-    return f"LET'S ASSUME U SEE SUMMARY. API: {os.getenv("OPENAI_API_KEY")}"
+    # return f"LET'S ASSUME U SEE SUMMARY. API: {os.getenv("OPENAI_API_KEY")}"
     try:
-        prompt = f"Summarize the documentation for {tool_name} in a concise manner:\n{documentation}"
+        prompt = f"Summarize the documentation for {tool_name} in a concise manner"
         response = openai.Completion.create(
             engine="text-davinci-003",  # Or another suitable engine
             prompt=prompt,
