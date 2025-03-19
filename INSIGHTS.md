@@ -16,4 +16,5 @@ RAILWAY Was chosen:
 ## HOW TO USE PRIVATE NETWORKING IN RAILWAY
 - use HTTP
 - specify port
+- use ["::", "0.0.0.0"] for backend to have support of ipv6
 
