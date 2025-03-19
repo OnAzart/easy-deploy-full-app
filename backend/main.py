@@ -47,21 +47,18 @@ def summarize_documentation(documentation: str, tool_name: str, max_tokens: int 
     """
     Summarizes the given documentation using OpenAI's GPT.
     """
-    # return f"LET'S ASSUME U SEE SUMMARY. API: {os.getenv("OPENAI_API_KEY")}"
     try:
         prompt = f"Summarize the documentation for {tool_name} in a concise manner"
-        response = openai.Completion.create(
-            engine="text-davinci-003",  # Or another suitable engine
-            prompt=prompt,
+        response = openai.chat.completions.create(
+            model="gpt-3.5-turbo",  # Or another suitable chat model
+            messages=[{"role": "user", "content": prompt}],
             max_tokens=max_tokens,
-            n=1,
-            stop=None,
             temperature=0.5,
         )
-        return response.choices[0].text.strip()
+        return response.choices[0].message.content.strip()
     except Exception as e:
         print(f"Error during summarization: {e}")
-        # raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
+        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
 
 
 @app.get("/summarize")
